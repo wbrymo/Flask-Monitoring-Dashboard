@@ -48,12 +48,12 @@
         enabled: yes
         state: started
 
-    - name: Install Nginx
-      amazon.aws.amazon_linux_extras:
-        name: nginx1
-        state: enabled
+    - name: Enable Nginx using amazon-linux-extras
+      shell: amazon-linux-extras enable nginx1
+      args:
+        warn: false
 
-    - name: Install Nginx package
+    - name: Install Nginx
       yum:
         name: nginx
         state: present
