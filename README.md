@@ -1,2 +1,6 @@
-# Flask-Monitoring-Dashboard
-Deploy a Python Flask-based dashboard. Students must:  - Host the app on Use Gunicorn + Nginx for production deployment. 
+
+# Flask Monitoring Dashboard
+
+- Deploy using Gunicorn + Nginx
+- Expose publicly over port 80
+- Access metrics dashboard from browser: http://your-ip/
