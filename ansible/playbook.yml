@@ -48,13 +48,16 @@
         enabled: yes
         state: started
 
-    - name: Enable Nginx using amazon-linux-extras
-      shell: amazon-linux-extras enable nginx1
-
-    - name: Install Nginx
-      yum:
+    - name: Install Nginx directly
+      package:
         name: nginx
         state: present
+
+    - name: Start and enable Nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: true
 
     - name: Copy Nginx config
       copy:
@@ -65,3 +68,4 @@
       systemd:
         name: nginx
         state: restarted
+
